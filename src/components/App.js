@@ -1,6 +1,6 @@
 import React from 'react';
-import '../stylesheets/App.css';
-import fetchData from '../services/FetchData';
+import '../stylesheets/App.scss';
+import fetchData from '../services/Fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      value: ''
+      inputValue: ''
     }
   this.handleInputValue = this.handleInputValue.bind(this);
   this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
@@ -26,38 +26,37 @@ class App extends React.Component {
       })
   }
 
-  handleInputValue(inputValue) {
+  handleInputValue(value) {
     this.setState({
-      value: inputValue,
+      inputValue: value,
     })
   }
 
     renderCharacterDetail(props) {
       const routeID = props.match.params.id;
-      const data = this.state.data;
-      console.log(data);
-  
-      for (let dataItem of data) {
-        if (dataItem.id === parseInt(routeID)) {
-          return <CharacterDetail characterObj={dataItem} />;
+      const myData = this.state.data;
+      for (let character of myData) {
+        if (character.id === parseInt(routeID)) {
+          return <CharacterDetail characterObj={character} />;
         }
       }
     }
   render() {
+    const { data, inputValue } = this.state;
     return (
       <div className="App">
         <Switch>
           <Route exact path="/">
             <Filters
-              value={this.state.value}
+              inputValue={inputValue}
               handleInputValue={this.handleInputValue}
             />
             <CharacterList
-              data={this.state.data}
-              inputValue={this.state.value}
+              dataList={data}
+              inputValue={inputValue}
             />
           </Route>
-          <Route path="/detail/:id" render={this.renderCharacterDetail}></Route>
+          <Route path="/details/:id" render={this.renderCharacterDetail}></Route>
         </Switch >
       </div >
     );
