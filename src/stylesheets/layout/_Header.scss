@@ -1,0 +1,32 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    &__logo {
+        width: 450px;
+        padding: 30px;
+    }
+
+    &__form {
+        font-family:"Press Start 2P", cursive;
+        font-size: 0.80em;
+        text-align: center;
+
+        span {
+            color: rgb(85, 252, 19);
+            font-size: 1.25em;
+        }
+
+        input {
+            width: 160px;
+            background-color: black;
+            border-style: none;
+            font-family:"Press Start 2P", cursive; ;
+            border-bottom: 1px solid rgb(85, 252, 19);
+            color: rgb(0, 255, 242);
+            margin-bottom: 30px;
+            
+        }
+    }
+}

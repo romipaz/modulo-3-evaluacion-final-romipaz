@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/layout/_Header.scss';
 
 const Filters = (props) => {
 
@@ -8,14 +9,16 @@ const Filters = (props) => {
     }
 
     return (
-        <form>
-            <label htmlFor="value">Search a character </label>
+        <form className="Header__form">
+            <label htmlFor="value">Search character:
+            <span> $find ./</span>
+            </label>
             <input
                 type="text"
                 value={props.value}
                 name="value"
                 onChange={updateInputValue}
-                placeholder=" Ex: 'Morty'" />
+                placeholder="'Type Here'" />
         </form>
     );
 };

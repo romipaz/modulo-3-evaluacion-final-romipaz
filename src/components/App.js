@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/App.scss';
 import fetchData from '../services/Fetch';
+import Header from './Header';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
@@ -45,6 +46,7 @@ class App extends React.Component {
     const { data, inputValue } = this.state;
     return (
       <div className="App">
+        <Header />
         <Switch>
           <Route exact path="/">
             <Filters
