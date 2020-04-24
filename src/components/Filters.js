@@ -18,7 +18,7 @@ const Filters = (props) => {
                 value={props.value}
                 name="value"
                 onChange={updateInputValue}
-                placeholder="'Type Here'" />
+                placeholder="'Type Name'"/>
         </form>
     );
 };

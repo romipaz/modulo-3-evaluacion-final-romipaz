@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/rmlogo.png'
-import '../stylesheets/utils/_mixins.scss';
-import '../stylesheets/utils/_variables.scss';
 import '../stylesheets/layout/_Header.scss';
 
 
