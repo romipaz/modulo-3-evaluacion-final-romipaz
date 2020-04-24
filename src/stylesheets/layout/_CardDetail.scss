@@ -1,41 +1,102 @@
-.App {
-    height: 100vh;
-    width: 100%;
-    background: url("../../images/rmwallpaper2.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
+$tablet: 765px;
+$desktop: 1200px;
+
+@mixin tabletSize {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
 }
 
+@mixin desktopSize {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+html {
+  background-color: black;
+}
+
+.App {
+  height: auto;
+  width: 100%;
+  background: url("../../images/rmwallpaper2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  @include tabletSize {
+    height: 100vh;
+  }
+}
 
 .details__container {
-
+  height: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding: 30px;
 
+  @include tabletSize {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    background-color: transparent;
+  }
+
+  @include desktopSize {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 60px;
+    background-color: transparent;
+  }
+
   .details__img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    @include tabletSize {
+      padding: 0px;
+    }
 
     img {
-      width: 100%;
+      width: 70%;
       height: auto;
       float: left;
-      border: 5px solid rgb(0, 255, 242);
-      box-shadow: 0 4px 8px 0 rgba(27, 255, 255, 0.767), 0 6px 20px 0 #15eff780;
+      border: 1px solid rgb(0, 255, 242);
+      box-shadow: 0 0px 18px 0 rgba(27, 255, 255, 0.767), 0 6px 20px 0 #15eff780;
+      @include tabletSize {
+        width: 80%;
+      }
+      @include tabletSize {
+        width: 100%;
+      }
     }
   }
 
   .details__info {
-    padding-left: 30px;
+    padding: 0px 50px;
     font-family: "Press Start 2P", cursive;
+    background-color: rgba(0,0,0,.5);
+    text-align: center;
+    font-size: 0.75em;
+    @include tabletSize {
+      font-size: 1em;
+      padding-left: 50px;
+      padding-right: 20px;
+      text-align: left;
+      box-shadow: 0 0px 18px 0 rgba(27, 255, 255, 0.767), 0 6px 20px 0 #15eff780;
+    }
 
     &--title {
       padding-bottom: 5px;
       border-bottom: 1px dotted rgb(0, 255, 242);
       font-family: "Press Start 2P", cursive;
-      font-size: 1em;
+      font-size: 1.25em;
       color: rgb(85, 252, 19);
     }
 

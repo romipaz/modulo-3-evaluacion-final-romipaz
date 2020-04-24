@@ -1,3 +1,19 @@
+$tablet:765px;
+$desktop: 1200px;
+
+@mixin tabletSize {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+  
+  @mixin desktopSize {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+
+
 .App {
   height: 100%;
   box-sizing: border-box;
@@ -7,3 +23,5 @@
   color: white;
   font-family: 'Ubuntu', sans-serif;
 }
+
+

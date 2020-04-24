@@ -12,12 +12,12 @@ const CharacterDetail = (props) => {
                 <img src={props.characterObj.image} alt={props.characterObj.name} />
             </section>
             <section className="details__info">
-                <h2 className="details__info--title">{props.characterObj.name}</h2>
+                <h1 className="details__info--title">{props.characterObj.name}</h1>
                 <div className="details__info--tag">{props.characterObj.gender}</div>
                 <div className="details__info--tag">{props.characterObj.species}</div>
                 <p>Origin: {props.characterObj.origin.name}</p>
                 <p>Status: {props.characterObj.status}</p>
-                <p>Appears on {props.characterObj.episode.length} episodes</p>
+                <p>Episodes: {props.characterObj.episode.length}</p>
                 <div className="details__info--back">
                 <Link to="/">Back</Link>
                 </div> 

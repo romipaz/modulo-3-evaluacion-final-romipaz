@@ -1,10 +1,40 @@
+$tablet:765px;
+$desktop: 1200px;
+
+@mixin tabletSize {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+  
+  @mixin desktopSize {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+
+
+
 .card__container {
+  @include tabletSize {
+    height: auto;
+    background-color: transparent;
+  }
   &--img {
+    width: 250px;
     border-radius: 50%;
     border: 1px solid black;
     //filter: hue-rotate(180deg);
     -webkit-filter: hue-rotate(90deg);
     filter: hue-rotate(90deg);
+
+    @include tabletSize {
+      width: 280px;
+    }
+
+    @include desktopSize {
+      width: 320px;
+    }
   }
   &--title {
     padding-bottom: 5px;
@@ -32,14 +62,24 @@
   list-style-type: none;
   margin: 0px;
   padding: 10px;
-  background-color: #060707;
+  background-color: black;
+
 
   &--li {
     margin: 5px;
     padding: 10px;
     border: 1px dotted rgb(0, 255, 242);
     text-align: center;
-    width: 300px;
+    width: 280px;
+
+    @include tabletSize {
+      width: 300px;
+      background-color: rgba(0,0,0,.5);
+    }
+
+    @include desktopSize {
+      width: 350px;
+    }
 
     &:hover img {
       filter: none;

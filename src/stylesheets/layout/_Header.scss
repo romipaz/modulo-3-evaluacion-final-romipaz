@@ -1,32 +1,85 @@
-.Header{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    &__logo {
-        width: 450px;
-        padding: 30px;
+$tablet: 765px;
+$desktop: 1200px;
+
+@mixin tabletSize {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktopSize {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: black;
+
+  @include tabletSize {
+    background-color: transparent;
+  }
+
+  &__logo {
+    width: 250px;
+    padding: 30px;
+
+    @include tabletSize {
+      width: 350px;
     }
 
-    &__form {
-        font-family:"Press Start 2P", cursive;
-        font-size: 0.80em;
-        text-align: center;
-
-        span {
-            color: rgb(85, 252, 19);
-            font-size: 1.25em;
-        }
-
-        input {
-            width: 160px;
-            background-color: black;
-            border-style: none;
-            font-family:"Press Start 2P", cursive; ;
-            border-bottom: 1px solid rgb(85, 252, 19);
-            color: rgb(0, 255, 242);
-            margin-bottom: 30px;
-            
-        }
+    @include desktopSize {
+      width: 550px;
     }
+  }
+
+  &__form {
+    text-align: center;
+    background-color: black;
+    @include tabletSize {
+        background-color: transparent;
+      }
+
+    label {
+        line-height: 2rem;
+      padding: 20px;
+      font-family: "Press Start 2P", cursive;
+      font-size: 0.9em;
+      text-align: center;
+      @include tabletSize {
+        padding: 20px;
+        font-size: 1.15em;
+      }
+    }
+
+    span {
+      color: rgb(85, 252, 19);
+      font-size: 0, 9em;
+      @include tabletSize {
+        font-size: 1.15em;
+      }
+    }
+
+    input {
+      width: 150px;
+      background-color: black;
+      border-style: none;
+      font-family: "Press Start 2P", cursive;
+      border-bottom: 1px solid rgb(85, 252, 19);
+      color: rgb(0, 255, 242);
+      margin-bottom: 30px;
+      font-size: 0.9em;
+      &::placeholder {
+        font-size: 0.9em;
+        color: whitesmoke;
+      }
+      @include tabletSize {
+        width: 180px;
+        font-size: 1.15em;
+      }
+    }
+  }
 }
