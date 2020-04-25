@@ -1,6 +1,6 @@
 ![logo](src/images/rmlogo.png)
 
-## 👽Ricky & Morty Character's DB👽
+## 👽Rick & Morty Character's DB👽
 
 This project is part of Adalab's coursework evaluation 💻
 
