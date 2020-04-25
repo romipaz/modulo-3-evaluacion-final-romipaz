@@ -4,6 +4,10 @@
 
 This project is part of Adalab's coursework evaluation 💻
 
+### 🛠Main Tools
+
+**React.js** - **Javascript** - **CSS3/SASS** - **HTML5**
+
 ### 💾What does this project do?
 
 You can filter the list by typing a character's name on the input field:
@@ -16,14 +20,13 @@ You will get an error message if you type a non existing character:
 ![Error](src/images/rerror.png)
 
 
-
-### 🛠Main Tools
-
-React.js - Javascript - SASS - HTML5
-
 ### 🎨Responsive Design
 
+📱**Mobile**
+
 ![Mobile](src/images/rmobile.png)
+
+📱💻**Tablet/PC**
 
 ![Tablet/PC](src/images/rtablet.png)
 
