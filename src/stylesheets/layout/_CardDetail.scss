@@ -110,6 +110,14 @@ html {
       color: black;
     }
 
+    &--stat {
+      color: red;
+      font-size: 1.5em;
+      @include tabletSize {
+        font-size: 2em;
+      }
+    }
+
     &--back {
       font-size: 0.9em;
       padding: 10px;
@@ -129,31 +137,50 @@ html {
 
 
 .errorText {
-  margin-top: 30px;
-  height: 300px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 10px;
   background-color: black;
 
+  @include tabletSize {
+    background-color: transparent;
+    margin-top: 30px;
+    height: 300px;
+    padding: 30px;
+  }
 
   &--img {
-    width: 200px;
+    width: 150px;
     height: auto;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    @include tabletSize {
+      width: 200px;
+      height: auto;
+      margin-bottom: 50px;
+    }
+    
   }
   
   p {
+    background-color: black;
+    padding: 10px;
+    border: 1px solid red;
     text-align: center;
     font-family: "Press Start 2P", cursive;
-    font-size: 0.9em;
-    line-height: 2em;
+    font-size: 0.7em;
+    line-height: 1.8em;
+    @include tabletSize {
+      font-size: 1em;
+      line-height: 2em;
+    }
+  
   }
 
   &--error {
-    line-height: 2em;
+    line-height: 1.5em;
     background-color: red;
     padding: 5px;
     color: white;

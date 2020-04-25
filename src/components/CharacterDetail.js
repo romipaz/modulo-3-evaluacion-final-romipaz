@@ -4,7 +4,7 @@ import '../stylesheets/layout/_CardDetail.scss';
 
 const CharacterDetail = (props) => {
     const { image, name, gender, species, origin, status, episode } = props.characterObj;
-    const whichKind = species === 'Human' ? '🌎' : '👽'
+    const whichKind = species === 'Human' ? 'Human' : '👽'
     const whichStatus = status === 'Alive' ? '❤️❤️❤️' : '💀💀💀'
     return (
         <div className="details__container">
@@ -16,7 +16,7 @@ const CharacterDetail = (props) => {
                 <div className="details__info--tag">{gender}</div>
                 <div className="details__info--tag">{whichKind}</div>
                 <p>Origin: {origin.name}</p>
-                <p>Status: {whichStatus}</p>
+                <p>Status: <span className="details__info--stat">{whichStatus}</span></p>
                 <p>Episodes: {episode.length}</p>
                 <div className="details__info--back">
                 <Link to="/">Back</Link>
