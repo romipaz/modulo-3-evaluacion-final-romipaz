@@ -8,7 +8,7 @@ const CharacterList = (props) => {
     const { charList, inputValue } = props
     const sortCharacter = !charList.length ? (
         <div className="errorText">
-           <p><span className="errorText--error">ERROR!</span><br></br>Oh Geez, <span className="errorText--input">"{inputValue}"</span> does NOT exist in this dimension.</p><img className="errorText--img" src={faces}></img>
+           <p><span className="errorText--error">ERROR!</span><br></br>Oh Geez, <span className="errorText--input">"{inputValue}"</span> does NOT exist in this dimension.</p><img className="errorText--img" src={faces} alt="faces"></img>
         </div>
     ) : ("");
     return (

@@ -5,6 +5,7 @@ import Header from './Header';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
+import faces from '../images/faces.gif';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -14,9 +15,9 @@ class App extends React.Component {
       data: [],
       inputValue: ''
     }
-    this.applyFilters = this.applyFilters.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.setFilters = this.setFilters.bind(this);
   }
 
   componentDidMount() {
@@ -45,7 +46,7 @@ class App extends React.Component {
     })
   }
 
-  applyFilters() {
+  setFilters() {
     const { data, inputValue } = this.state
     return data
       .filter(characterObj => inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()))
@@ -56,14 +57,16 @@ class App extends React.Component {
     const allChars = this.state.data;
     const chars = allChars.find(char => char.id === parseInt(routeID))
     if (chars) {
-      return <CharacterDetail characterObj={chars} />//ex character
+      return <CharacterDetail characterObj={chars} />
     } else {
-      return <p>This character does not exist in this dimension yet</p>;
+      return <div className="errorText">
+        <p><span className="errorText--error">Wubba Lubba Dub Dub!!</span><br></br>You got yourself outta our database dimension.</p><img className="errorText--img" src={faces} alt="faces"></img>
+      </div>;
     }
 
   }
   render() {
-    const {inputValue} = this.state;
+    const { inputValue } = this.state;
     return (
       <div className="App">
         <Header />
@@ -74,7 +77,7 @@ class App extends React.Component {
               handleInputValue={this.handleInputValue}
             />
             <CharacterList
-              charList={this.applyFilters()}
+              charList={this.setFilters()}
               inputValue={inputValue}
             />
           </Route>
