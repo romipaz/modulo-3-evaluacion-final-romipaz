@@ -4,21 +4,22 @@ import '../stylesheets/layout/_Header.scss';
 const Filters = (props) => {
 
     const updateInputValue = (evt) => {
-        evt.preventDefault();
-        props.handleInputValue(evt.currentTarget.value)
+        const value = evt.target.value;
+        props.handleInputValue(value)
     }
+    const preventDefault = (evt) => evt.preventDefault()
 
     return (
-        <form className="Header__form">
+        <form className="Header__form" onSubmit={preventDefault}>
             <label htmlFor="value">Search character:
             <span> $find ./</span>
             </label>
             <input
                 type="text"
-                value={props.value}
+                value={props.inputValue}
                 name="value"
                 onChange={updateInputValue}
-                placeholder="'Type Name'"/>
+                placeholder="'Type Name'" />
         </form>
     );
 };

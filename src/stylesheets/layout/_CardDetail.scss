@@ -79,7 +79,6 @@ html {
   }
 
   .details__info {
-    padding: 0px 50px;
     font-family: "Press Start 2P", cursive;
     background-color: rgba(0,0,0,.5);
     text-align: center;
@@ -125,5 +124,44 @@ html {
         color: rgb(0, 255, 242);
       }
     }
+  }
+}
+
+
+.errorText {
+  margin-top: 30px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: black;
+
+
+  &--img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  
+  p {
+    text-align: center;
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.9em;
+    line-height: 2em;
+  }
+
+  &--error {
+    line-height: 2em;
+    background-color: red;
+    padding: 5px;
+    color: white;
+  }
+
+  &--input {
+    color: rgb(0, 255, 242);
+    font-size: 1.25em;
+    font-weight: bold;
   }
 }
