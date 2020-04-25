@@ -1,12 +1,16 @@
 ![logo](src/images/rmlogo.png)
 
-## Ricky and Morty character search
+## 👽Ricky & Morty Character's DB👽
 
-This project is part of Adalab's coursework evaluation.
+This project is part of Adalab's coursework evaluation 💻
 
-### Project Structure
+### 💾Project Structure
 
-### Responsive Design
+### 🛠Main Tools
+
+React.js - Javascript - SASS - HTML5
+
+### 🎨Responsive Design
 
 ![Mobile](src/images/rmobile.png)
 
