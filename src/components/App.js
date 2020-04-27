@@ -13,9 +13,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      inputValue: ''
+      inputValue: '',
+      inputEpi: ''
     }
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.handleInputEpi = this.handleInputEpi.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.setFilters = this.setFilters.bind(this);
   }
@@ -46,10 +48,17 @@ class App extends React.Component {
     })
   }
 
+  handleInputEpi(episode) {
+    this.setState({
+      inputEpi: episode,
+    })
+  }
+
   setFilters() {
-    const { data, inputValue } = this.state
+    const { data, inputValue, inputEpi } = this.state
     return data
       .filter(characterObj => inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()))
+      .filter(characterObj => inputEpi === '' || characterObj.episode.length === parseInt(inputEpi))
   }
 
   renderCharacterDetail(props) {
@@ -66,7 +75,7 @@ class App extends React.Component {
 
   }
   render() {
-    const { inputValue } = this.state;
+    const { inputValue, inputEpi } = this.state;
     return (
       <div className="App">
         <Header />
@@ -75,6 +84,8 @@ class App extends React.Component {
             <Filters
               inputValue={inputValue}
               handleInputValue={this.handleInputValue}
+              inputEpi={inputEpi}
+              handleInputEpi={this.handleInputEpi}
             />
             <CharacterList
               charList={this.setFilters()}

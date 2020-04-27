@@ -9,6 +9,12 @@ const Filters = (props) => {
     }
     const preventDefault = (evt) => evt.preventDefault()
 
+    const updateInputEpi = (evt) => {
+        const value = evt.target.value;
+        props.handleInputEpi(value)
+    }
+
+
     return (
         <form className="Header__form" onSubmit={preventDefault}>
             <label htmlFor="value">Search character:
@@ -20,6 +26,12 @@ const Filters = (props) => {
                 name="value"
                 onChange={updateInputValue}
                 placeholder="'Type'" />
+            <input
+                type="number"
+                value={props.inputEpi}
+                name="episode"
+                onChange={updateInputEpi}
+                placeholder="'episode'" />
         </form>
     );
 };
